@@ -15,7 +15,7 @@ const otherNums = [3, 5, -1, 17, 0];
 
 otherNums.forEach((num) => {
   if (num == -1) {
-    break;
+    return;
   } else {
     console.log(num);
   }

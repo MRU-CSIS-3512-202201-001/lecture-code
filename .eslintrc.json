@@ -5,7 +5,7 @@
     "prettier"
   ],
   "rules": {
-    "no-console": 1,
+    "no-console": "warn",
     "no-var":"warn"
   },
   "plugins": ["import"],
