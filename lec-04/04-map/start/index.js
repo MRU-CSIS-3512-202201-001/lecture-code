@@ -5,7 +5,10 @@ let boringWords = ["sigh", "droop", "laze"];
 
 function excitify(word) {
   // 🧠 Can you do this with a string template? Try!
+  return `!!!!${word.toUpperCase()}!!!!`;
 }
+
+let excitingWords = boringWords.map(excitify);
 
 // ------------------------------------------
 
@@ -37,3 +40,12 @@ const photos = [
 ];
 
 // 🧠 What if we just want an array of the titles?
+let titles = photos.map((photo) => photo.title);
+
+// 🧠 What if we wanted NEW objects composed of parts of the originals?
+let photographerLocations = photos.map((photo) => {
+  return {
+    artist: photo.photographer,
+    hasBeenTo: photo.location,
+  };
+});

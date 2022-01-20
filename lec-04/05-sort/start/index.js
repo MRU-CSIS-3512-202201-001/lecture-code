@@ -13,6 +13,10 @@ const colourNames = [
 // 🧠 How could we sort these?
 const shoeSizes = [8, 12, 6.5, 11, 16, 9, 8];
 
+function shoeComparator(shoeSize1, shoeSize2) {
+  return shoeSize2 - shoeSize1;
+}
+
 const adventurers = [
   {
     name: "Jampa",
@@ -43,3 +47,11 @@ const adventurers = [
     ac: 7,
   },
 ];
+
+// 🧠 This was on my coding midterm last year. How would you sort these by level descending?
+let sortedByLevel = adventurers.sort((adv1, adv2) => adv2.level - adv1.level);
+
+// 🧠 Reverse alphabetical order by name?
+let sortedByNameReverse = adventurers.sort((adv1, adv2) =>
+  adv2.name.localeCompare(adv1.name)
+);
