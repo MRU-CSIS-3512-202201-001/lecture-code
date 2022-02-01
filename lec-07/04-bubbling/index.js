@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 💡 Notice any duplication of code? How could we clear it up?
 
+  // 💡 The devtools are showing something interesting here....
+
   function logEvent(e) {
     console.log(`${e.target.nodeName}#${e.target.id} was clicked`);
   }
