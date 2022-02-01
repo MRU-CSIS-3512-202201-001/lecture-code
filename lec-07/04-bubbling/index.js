@@ -3,8 +3,16 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   // 🧠 How could you make Cletus log his id and nodeName when he's clicked?
+  document.querySelector("#cletus").addEventListener("click", (e) => {
+    console.log(`${e.target.nodeName}, id ${e.target.id}`);
+  });
   // 🧠 If we click on Cletus, what will happen?
   // 🧠 How could you make Ma do the same?
+
+  document.querySelector("#ma").addEventListener("click", (e) => {
+    console.log(`${e.target.nodeName}, id ${e.target.id}`);
+  });
+
   // 🧠 If we click on Ma, what will happen?
   // 🧠 If we click on Cletus NOW, what will happen? WHY?
   // 💡 Notice any duplication of code? How could we clear it up?
