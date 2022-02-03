@@ -1,0 +1,18 @@
+div.container {
+  display: flex;
+  width: 500px;
+  height: 500px;
+  background-color: rgb(18, 4, 80);
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  height: 40px;
+  padding: 10px;
+  font-size: 1.6em;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
