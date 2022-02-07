@@ -1,9 +1,13 @@
 const TRAVEL_PHOTO_API_BASE =
   "https://www.randyconnolly.com/funwebdev/3rd/api/travel/images.php";
 
-const url = photoApiUrlFor("Banff");
+const url = photoApiUrlFor("Calgary");
 
 const fetchResult = fetch(url); // here's our new friend
+
+fetchResult
+  .then((resp) => resp.json())
+  .then((objs) => console.log(JSON.stringify(objs)));
 console.log(fetchResult);
 
 displayPhotos(fetchResult);
