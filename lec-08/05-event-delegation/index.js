@@ -10,6 +10,19 @@ document.addEventListener("DOMContentLoaded", () => {
   //
   // 🧠 What if we wanted each button to respond to a click and log its
   //    nickname to console?
+
+  // document.querySelectorAll("button").forEach((button) => {
+  //   button.addEventListener("click", (e) => {
+  //     console.log(e.target.dataset.nickname);
+  //   });
+  // });
+
+  document.querySelector("#ma").addEventListener("click", (e) => {
+    if (e.target && e.target.nodeName == "BUTTON") {
+      console.log(e.target.dataset.nickname);
+    }
+  });
+
   // 🧠 What's one problem with this? Hint: what if there were 100 buttons?
   //
   // Build the same behaviour, but with event delegation:
