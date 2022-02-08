@@ -1,11 +1,11 @@
 // Our quest: log out the JS objects representing the photos for a given city
 
-BASE_CITY_IMAGES_API_ENDPOINT =
-  "https://www.randyconnolly.com/funwebdev/3rd/api/travel/images.php";
+// const BASE_CITY_IMAGES_API_ENDPOINT =
+//   "https://www.randyconnolly.com/funwebdev/3rd/api/travel/images.php";
 
 // 🧠 What do you see when you go to this endpoint? (that's a new word)
 // 🧠 Do we want ALL this JSON for our task? (what is our task again?)
-
+// 5892532
 // Try going to www.randyconnolly.com/funwebdev/3rd/api/travel/images.php?city=5913490
 // 🧠 What do you notice about the JSON we get now?
 // 🧠 What is that `city=5913490` part called? (think back to web 1 forms...)
@@ -14,6 +14,17 @@ BASE_CITY_IMAGES_API_ENDPOINT =
 
 // TODO: make a function that returns an API endpoint for a given city (but only Calgary & Banff)
 // 🧠 What do you want to call it?
+// function apiEndpointFor(city) {
+//   return BASE_CITY_IMAGES_API_ENDPOINT + "?city=" + codeFor(city);
+// }
+
+// function codeFor(city) {
+//   switch(city.toUpperCase()) {
+//     case "BANFF": return 5892532 ;
+//     case "CALGARY": return 5913490;
+//     default: return -1;
+//   }
+// }
 
 // TODO: this seems pretty useful.
 // Make a constructor function for it and park it in its own file.
@@ -22,9 +33,9 @@ BASE_CITY_IMAGES_API_ENDPOINT =
 
 // 🧠 What's our next step?
 
-const endpoint = new Endpoint();
-const promiseContainingResponse = fetch(endpoint.for("calgary"));
-console.log(promiseContainingResponse);
+let endpoint = new Endpoint();
+const fetchResult = fetch(endpoint.for("calgary"));
+console.log(fetchResult);
 
 // 🧠 Is `fetch` JavaScript?
 // 🧠 What is fetch taking as its argument?
@@ -53,9 +64,7 @@ console.log(promiseContainingResponse);
 // 🧠 What kind of things does "then" take as its arguments?
 // We'll often just pass in one callback - the "if everything is ok" or "on fulfilled" callback.
 
-const promiseContainingImages = promiseContainingResponse.then(function (
-  response
-) {
+const promiseContainingImages = fetchResult.then(function (response) {
   return response.json(); // this is like a "free" JSON.parse() going on
 });
 
@@ -70,16 +79,16 @@ promiseContainingImages.then(function (imageObjects) {
 // Since fetch and "then" each return Promise objects, we can chain them
 // together like so:
 
-fetch(endpoint.for("calgary"))
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (imageObjects) {
-    console.log(imageObjects);
-  });
+// fetch(endpoint.for("calgary"))
+//   .then(function (response) {
+//     return response.json();
+//   })
+//   .then(function (imageObjects) {
+//     console.log(imageObjects);
+//   });
 
 // And it's much more common to see this done with arrow syntax:
 
-fetch(endpoint.for("calgary"))
-  .then((response) => response.json())
-  .then((imageObjects) => console.log(imageObjects));
+// fetch(endpoint.for("calgary"))
+//   .then((response) => response.json())
+//   .then((imageObjects) => console.log(imageObjects));
