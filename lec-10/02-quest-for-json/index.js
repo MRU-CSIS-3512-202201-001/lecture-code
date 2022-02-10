@@ -35,7 +35,7 @@
 
 let endpoint = new Endpoint();
 const fetchResult = fetch(endpoint.for("calgary"));
-console.log(fetchResult);
+console.log("fetch returned:",fetchResult);
 
 // 🧠 Is `fetch` JavaScript?
 // 🧠 What is fetch taking as its argument?
