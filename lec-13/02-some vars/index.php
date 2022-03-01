@@ -7,4 +7,4 @@ echo $greeting;
 //    for a while.
 
 $greeting = 123;  // 🧠 Can we do this?!?! How is this similar to JS?
-echo $greeting;   // 🧠 What does our page look like now?
+echo $greeting;   // 🧠 What does our page look like now? How could we fix it?
