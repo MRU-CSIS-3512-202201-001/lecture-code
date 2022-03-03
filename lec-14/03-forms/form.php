@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    <form action="form-handler.php" method="get">
+    <form action="form-handler.php" method="post">
         <ul>
             <li>
                 <label for="name">Name:</label>

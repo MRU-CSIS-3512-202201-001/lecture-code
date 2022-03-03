@@ -12,3 +12,4 @@ echo "hello, crazyworld";
 //    only PHP - like this one.
 
 // 🧠 What if we rename our file to index.php...what happens?
+?>

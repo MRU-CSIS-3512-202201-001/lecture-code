@@ -4,6 +4,13 @@
 // 🧠 How could we check to see if the name is not empty?
 // 🧠 How could we check if the name is a valid cheese?
 
+function h1() {
+    $cheeseName = $_GET["name"];
+    $cheesePrice = $_GET["price"];
+    return "<h1>$cheeseName ($$cheesePrice)";
+}
+
+
 ?>
 
 <!DOCTYPE html>
