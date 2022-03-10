@@ -1,9 +1,10 @@
 <?php
 session_start();
 
+$msg = $_SESSION["are_we_having_fun"];
 
 
-// 🧠 What kind of things can we write in here?
+
 
 ?>
 
@@ -19,6 +20,7 @@ session_start();
 
 <body>
     <h1>Page Two - I'm Writing To Session Storage</h1>
+    <h2><?= $msg ?></h2>
     <a href="page1.php">to page 1</a>
 </body>
 

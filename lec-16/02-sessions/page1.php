@@ -3,6 +3,18 @@ session_start();
 
 // 🧠 What did this do?
 // 🧠 How can we put things in here?
+
+$_SESSION["are_we_having_fun"] = "mmmmaybe?";
+$_SESSION["numberOfDaysInYear"] = 365;
+$_SESSION["sunny?"] = false;
+$_SESSION["complex"] = [
+    "MOVIE_TITLE" => "Mad Max 2",
+    1 => [
+        "director" => "Me!",
+        "age" => 66
+    ]
+];
+
 // 🧠 How can we get things out of here?
 
 

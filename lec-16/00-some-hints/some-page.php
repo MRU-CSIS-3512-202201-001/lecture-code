@@ -1,18 +1,17 @@
+<?php require "constants.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
-    <title>Some Page</title>
-</head>
+
+
+<?php include "./partials/head.partial.php"; ?>
 
 <body>
 
     <header>
         <nav>
-
+            <?= NAV_MSG ?>
             <ul>
                 <li><a href="index.php">index</a></li>
                 <li><a href="some-page.php">some page</a></li>

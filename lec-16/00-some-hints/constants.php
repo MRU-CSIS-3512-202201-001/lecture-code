@@ -1,0 +1,1 @@
+<?php define("NAV_MSG", "my AWESOME nav header"); ?>
