@@ -4,7 +4,7 @@
 $usernames = ['squidz', "r@nd0r", "NUX_BL@5TER"];
 
 // let's look at it one way
-// // ruh-roh
+// echo $usernames;  // ruh-roh
 
 // let's try another way
 // print_r($usernames);
@@ -16,7 +16,7 @@ $usernames = ['squidz', "r@nd0r", "NUX_BL@5TER"];
 
 
 // another way of making an array
-// $shoeSizes = array(12, 7, 7, 10);
+$shoeSizes = array(12, 7, 7, 10);
 
 // var_dump($shoeSizes);
 
@@ -44,14 +44,11 @@ $movie = [
     "director" => "Tim Burton"
 ];
 
-var_dump($movie);
+// var_dump($movie);
 
 // 🧠 How would we print out the year? The director?
-echo "the year is ${movie['year']}";
-
 // 🧠 How would we change the title?
-$movie["title"] = "Beetlejuice!";
-var_dump($movie);
+
 
 // 🧠 Does this look kinda familiar at all?
 
@@ -70,5 +67,3 @@ $complexMovie = [
         "born" => 1958
     ]
 ];
-
-var_dump($complexMovie);
