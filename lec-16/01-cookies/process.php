@@ -6,7 +6,10 @@ if ($_GET == ["mode" => "dark"]) {
   setcookie("mode", "light");
 }
 
+
+
+
+// header("Location: index.php");
+
+
 // 🧠 What if we want these to stick around after the browser is closed?
-
-
-header("Location: index.php");
