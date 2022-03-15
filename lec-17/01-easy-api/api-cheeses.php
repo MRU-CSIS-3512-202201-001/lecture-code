@@ -8,6 +8,12 @@ $result = [];
 
 header('Content-Type: application/json');
 
+foreach($cheeses as $cheese) {
+    if ($cheese['available']['calgary']) {
+        $result[] = $cheese;
+    }
+}
+
 echo json_encode($result);
 
 
