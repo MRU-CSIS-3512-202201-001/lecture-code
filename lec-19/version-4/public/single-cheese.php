@@ -8,6 +8,33 @@
 
 require "../classes/Cheese.php";
 
-$cheese = new Cheese("ricotta", "fresh", "some slightly longer description", "002");
+$pdo = new PDO("mysql:host=localhost;dbname=cheese_db;charset=utf8mb4", "root", "");
+
+$theQuery = <<<'EOD'
+SELECT
+    cheese.name as name,
+    classification.code as classification,
+    image.id as photoId,
+    description 
+FROM
+    cheese
+    INNER JOIN classification ON ( cheese.classification_id = classification.id )
+    INNER JOIN description ON ( cheese.id = description.cheese_id )
+    INNER JOIN image ON ( cheese.id = image.cheese_id ) 
+WHERE
+    cheese.id = 1
+EOD;
+
+$statement = $pdo->prepare($theQuery);
+$statement->execute();
+$results = $statement->fetchAll(PDO::FETCH_OBJ);
+$theOneCheese = $results[0];
+
+// var_dump($results);
+
+// echo $results[0]->cheese_name;
+
+
+$cheese = new Cheese($theOneCheese->name, $theOneCheese->classification, $theOneCheese->photoId, $theOneCheese->description);
 
 require "../views/single-cheese.view.php";

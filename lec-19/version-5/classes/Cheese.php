@@ -8,7 +8,7 @@ class Cheese
     public $description;
     public $photoId;
 
-    public function __construct($name, $classification, $description, $photoId)
+    public function __construct($name, $classification, $photoId, $description)
     {
         $this->name = $name;
         $this->classification = $classification;

@@ -9,7 +9,7 @@
 
 require "../classes/Cheese.php";
 
-$cheese = new Cheese("ricotta", "fresh", "some slightly longer description", "002");
+$cheese = new Cheese("cottage", "fresh", "some slightly longer description", "001");
 
 ?>
 
@@ -25,11 +25,7 @@ $cheese = new Cheese("ricotta", "fresh", "some slightly longer description", "00
 
 <body>
     <div class="container">
-        <div class="cheese-header">
-            <span class="cheese-name"><?= $cheese->name() ?></span>
-            <span class="cheese-pic"><img src="<?= $cheese->cloudinaryUrl(70) ?>">
-        </div>
-        <div class="cheese-description"><?= $cheese->description ?></div>
+        <?php require "../partials/cheese.partial.php" ?>
     </div>
 </body>
 

@@ -1,23 +1,20 @@
 <?php
 
-// 💡 
+// 💡 Huh. This is getting interesting.
 //
-// 🧠 
+// 🧠 We can't write out these cheese objects by hand like this. Where should
+//    we be getting the data to make these objects from?
 //
 
 require "../classes/Cheese.php";
 
-try {
-    $pdo = new PDO("mysql:host=localhost;dbname=cheese_db;charset=utf8mb4", "root", "");
-} catch (PDOException $e) {
-    die($e->getMessage());
-}
+$pdo = new PDO("mysql:host=localhost;dbname=cheese_db;charset=utf8mb4", "root", "");
 
 $theQuery = <<<'EOD'
 SELECT
-    cheese.name,
-    classification.code,
-    image.id,
+    cheese.name as name,
+    classification.code as classification,
+    image.id as photoId,
     description 
 FROM
     cheese
@@ -30,10 +27,14 @@ EOD;
 
 $statement = $pdo->prepare($theQuery);
 $statement->execute();
-$result = $statement->fetchAll();
+$results = $statement->fetchAll(PDO::FETCH_OBJ);
+$theOneCheese = $results[0];
 
-var_dump($result);
+// var_dump($results);
 
-// $cheese = new Cheese("ricotta", "fresh", "some slightly longer description", "002");
+// echo $results[0]->cheese_name;
+
+
+$cheese = new Cheese($theOneCheese->name, $theOneCheese->classification, $theOneCheese->photoId, $theOneCheese->description);
 
 require "../views/single-cheese.view.php";
