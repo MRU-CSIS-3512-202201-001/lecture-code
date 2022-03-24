@@ -2,12 +2,26 @@
     td,
     th {
         text-align: left;
+        padding: 10px;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
     }
 </style>
 
 <h1>Salted SHA1</h1>
 <table>
     <tr>
+        <th>text</th>
+        <th>salt</th>
+        <th>sha1 digest</th>
+        <th>digest length</th>
+    </tr>
+    <tr>
+
         <td>password</td>
         <td>d95bde9fbd4948ad98216eed55d5e83c</td>
         <td><?= sha1("password" . "d95bde9fbd4948ad98216eed55d5e83c") ?></td>
@@ -25,6 +39,12 @@
 
 <h1>Salted MD5</h1>
 <table>
+    <tr>
+        <th>text</th>
+        <th>salt</th>
+        <th>md5 digest</th>
+        <th>digest length</th>
+    </tr>
     <tr>
         <td>password</td>
         <td>d95bde9fbd4948ad98216eed55d5e83c</td>

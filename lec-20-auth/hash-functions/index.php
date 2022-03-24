@@ -2,11 +2,23 @@
     td,
     th {
         text-align: left;
+        padding: 10px;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
     }
 </style>
 
 <h1>SHA1</h1>
 <table>
+    <tr>
+        <th>text</th>
+        <th>sha1 digest</th>
+        <th>digest length</th>
+    </tr>
     <tr>
         <td>password</td>
         <td><?= sha1("password") ?></td>
@@ -33,6 +45,11 @@
 
 <h1>MD5</h1>
 <table>
+    <tr>
+        <th>text</th>
+        <th>md5 digest</th>
+        <th>digest length</th>
+    </tr>
     <tr>
         <td>password</td>
         <td><?= md5("password") ?></td>
