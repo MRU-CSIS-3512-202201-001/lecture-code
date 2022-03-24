@@ -1,14 +1,14 @@
 <?php
 
-// 💡 We've isolated the connection logic into its own class. That might come 
-//    in handy in a while.
+// 💡 Huh. This is getting interesting.
 //
-// The next thing we should isolate is all that grody query stuff.
+// 🧠 We can't write out these cheese objects by hand like this. Where should
+//    we be getting the data to make these objects from?
+//
 
 require "../classes/Cheese.php";
-require "../database/Connection.php";
 
-$pdo = Connection::connect("localhost", "cheese_db", "root", "");
+$pdo = new PDO("mysql:host=localhost;dbname=cheese_db;charset=utf8mb4", "root", "");
 
 $theQuery = <<<'EOD'
 SELECT
@@ -27,8 +27,14 @@ EOD;
 
 $statement = $pdo->prepare($theQuery);
 $statement->execute();
-$results = $statement->fetchAll(PDO::FETCH_CLASS, 'Cheese');
-$cheese = $results[0];
+$results = $statement->fetchAll(PDO::FETCH_OBJ);
+$theOneCheese = $results[0];
 
+// var_dump($results);
+
+// echo $results[0]->cheese_name;
+
+
+$cheese = new Cheese($theOneCheese->name, $theOneCheese->classification, $theOneCheese->photoId, $theOneCheese->description);
 
 require "../views/single-cheese.view.php";
