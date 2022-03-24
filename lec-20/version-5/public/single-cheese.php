@@ -22,12 +22,15 @@ FROM
     INNER JOIN description ON ( cheese.id = description.cheese_id )
     INNER JOIN image ON ( cheese.id = image.cheese_id ) 
 WHERE
-    cheese.id = 1
+    cheese.id = 4
 EOD;
 
 $statement = $pdo->prepare($theQuery);
 $statement->execute();
 $results = $statement->fetchAll(PDO::FETCH_CLASS, 'Cheese');
+
+var_dump($results);
+
 $cheese = $results[0];
 
 

@@ -24,7 +24,7 @@ class QueryBuilder
         INNER JOIN description ON ( cheese.id = description.cheese_id )
         INNER JOIN image ON ( cheese.id = image.cheese_id ) 
     WHERE
-        cheese.id = :id
+        cheese.id = :id;
     EOD;
 
     $statement = $this->pdo->prepare($theQuery);
