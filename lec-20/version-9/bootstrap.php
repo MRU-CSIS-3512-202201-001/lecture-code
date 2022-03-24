@@ -2,7 +2,6 @@
 require "../classes/Cheese.php";
 require "../database/Connection.php";
 require "../database/QueryBuilder.php";
-include "localconfig.php";
 $config = require "config.php";
 $dbConfig = $config['database'];
 
